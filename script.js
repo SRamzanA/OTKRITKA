@@ -7,7 +7,7 @@ const Card4 = document.getElementById('card4')
 
 const CardList = [Card1, Card2, Card3, Card4]
 
-alert("ТАПАЙ ПО КОНВЕРТУ 😉")
+// alert("ТАПАЙ ПО КОНВЕРТУ 😉")
 
 let open = false
 let pos = 0
