@@ -1,0 +1,147 @@
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url(images/fon.jpg);
+    background-size: cover;
+}
+
+.letter {
+    width: 60rem;
+    height: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.letter_envelope {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #ca84ff;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border: 0.2rem solid #c06dff;
+    /* box-shadow: 1rem 1rem 1rem #d59dff; */
+}
+
+.letter_envelope::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #d094ff;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    clip-path: polygon(0 2%, 50% 42%, 100% 2%, 100% 100%, 0 100%);
+    z-index: 10;
+}
+.letter_envelope::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #c06dff;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    clip-path: polygon(0 0, 50% 40%, 100% 0, 100% 100%, 0 100%);
+    z-index: 9;
+    transform: scale(1.01);
+}
+
+.cap {
+    top: 0;
+    left: 0;
+    width: 100%;    
+    height: 100%;
+    position: absolute;
+    background-color: #be69ff;
+    clip-path: polygon(0 0, 100% 0, 100% 2%, 50% 50%, 0 2%);
+    transform: scale(1.01);
+    z-index: 11;
+    transform-origin: top;
+    transition: all 1s ease;
+}
+
+.cap__open {
+    transform: scale(1.01) rotateX(180deg);
+    z-index: 1;
+}
+
+
+.letter_cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.card {
+    width: 80%;
+    height: 90%;
+    background-color: #efefef;
+    border: 0.2rem solid #dbdbdb;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card > img {
+    height: 90%;
+    max-width: 90%;
+    background: none;
+    margin: 1vw;
+    border: 0.3rem rgb(196, 157, 218) solid;
+    pointer-events: none;
+}
+.card > h1 {
+    bottom: 10%;
+    position: absolute;
+    text-align: center;
+    color: #ffffff;
+    font-size: 2vw;
+    -webkit-text-stroke: 1px black;
+}
+
+
+#card1 {
+    z-index: 5;
+}
+#card2 {
+    z-index: 4;
+} 
+#card3 {
+    z-index: 3;
+}
+#card4 {
+    z-index: 2;
+}
+
+.card__open {
+    animation: showCard 2s both ease-in-out;
+}
+
+@keyframes showCard {
+    0% {
+        z-index: 5;
+    }
+    50% {
+        z-index: 5;
+    }
+    60% {
+        z-index: 100;
+        transform: translateY(-100%);
+    }
+    100% {
+        z-index: 100;
+        transform: translateY(0);
+    }
+}
